@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Hearth Bakery - Order Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5e8c7; /* Creme color */
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff; /* White color */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #ffffff; /* White color */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+        .nav-tabs {
+            background-color: #ffffff; /* White color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 2px solid #8b4513; /* Darker brown color */
+        }
+        .nav-tabs button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #8b4513; /* Darker brown color */
+            color: white;
+            border: none;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+        }
+        .nav-tabs button.active {
+            background-color: #d2691e; /* A bit lighter brown to show active tab */
+        }
+        .content {
+            padding: 20px;
+        }
+        .form-container {
+            margin-top: 20px;
+            background-color: #8b4513; /* Darker brown color */
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        function showPage(pageId, btnId) {
+            document.getElementById('sweets').style.display = 'none';
+            document.getElementById('bread').style.display = 'none';
+            document.getElementById('about').style.display = 'none';
+            document.getElementById('products').style.display = 'none';
+            document.getElementById(pageId).style.display = 'block';
+            
+            // Remove active class from all buttons
+            var buttons = document.querySelectorAll('.nav-tabs button');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            // Add active class to the clicked button
+            document.getElementById(btnId).classList.add('active');
+        }
+    </script>
+</head>
+<body onload="showPage('sweets', 'tab-sweets')">
+    <div class="header">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f595ab943b43e0fb917a997/e629be7b-321f-473f-ac2f-bf91b730ef5b/Stonehearth-LOGO-Bakery.png" alt="Stone Hearth Bakery - Image 1">
+        <div class="nav-tabs">
+            <button id="tab-sweets" onclick="showPage('sweets', 'tab-sweets')">Sweets</button>
+            <button id="tab-bread" onclick="showPage('bread', 'tab-bread')">Bread</button>
+            <button id="tab-about" onclick="showPage('about', 'tab-about')">About</button>
+            <button id="tab-products" onclick="showPage('products', 'tab-products')">Products</button>
+        </div>
+        <img src="https://i.ytimg.com/vi/FAgJrsXIH5A/maxresdefault.jpg" alt="Stone Hearth Bakery - Image 2">
+    </div>
+    <div class="container" id="sweets">
+        <div class="content">
+            <h2>Sweets Order Form</h2>
+            <p>Please fill out the form below to place your order for sweets. We'll get back to you with a confirmation and delivery details.</p>
+            <div class="form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfEPp8RAyMGMDNZ49ri7qvJjQ4crSicQK5NoQx--gNDpaaHUQ/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="bread" style="display: none;">
+        <div class="content">
+            <h2>Bread Order Form</h2>
+            <p>Please fill out the form below to place your order for bread. We'll get back to you with a confirmation and delivery details.</p>
+            <div class="form-container">
+               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe5iJudHet5-6EOGssv2ECfYbUT1ZEPNFR0EYDK19X8PIJhoA/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="about" style="display: none;">
+        <div class="content">
+            <h2>About Us</h2>
+            <p>Information about Stone Hearth Bakery.</p>
+        </div>
+    </div>
+    <div class="container" id="products" style="display: none;">
+        <div class="content">
+            <h2>Our Products</h2>
+            <p>Details about our bakery products.</p>
+        </div>
+    </div>
+</body>
+</html>
